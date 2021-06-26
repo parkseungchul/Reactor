@@ -1,0 +1,8 @@
+/.gradle/
+/.idea/
+/gradle/wrapper/
+/gradlew
+/gradlew.bat
+/reactor001/gradle/wrapper/
+/reactor001/gradlew
+/reactor001/gradlew.bat
