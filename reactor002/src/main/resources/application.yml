@@ -1,0 +1,10 @@
+spring:
+  webflux:
+    hiddenmethod:
+      filter:
+        enabled: true
+
+logging:
+  level:
+    root: DEBUG
+    org.springframework.data: TRACE

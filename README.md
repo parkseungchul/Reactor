@@ -9,3 +9,7 @@
   - http://localhost:8080  ~ 테스트
   - Html 테스트
   
+### reactor002
+  - Item 상품 (DB)
+  - Cart 장바구니 (DB)
+  - CartItem 상품과 갯수 (VO)
