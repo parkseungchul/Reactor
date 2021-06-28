@@ -13,3 +13,4 @@
   - Item 상품 (DB)
   - Cart 장바구니 (DB)
   - CartItem 상품과 갯수 (VO)
+  - RepositoryTest 만들기
