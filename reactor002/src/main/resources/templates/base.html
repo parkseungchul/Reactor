@@ -7,18 +7,21 @@
 <body>
 
 <h2>ITEM</h2>
-<table>
+<table border="1">
   <thead>
     <tr>
-        <td>Id</td>
-        <td>Name</td>
-        <td>Price</td>
+        <td><b>Id</b></td>
+        <td><b>Name</b></td>
+        <td><b>Description</b></td>
+        <td><b>Price</b></td>
+        <td colspan="3"><b>Action</b></td>
     </tr>
   </thead>
   <tbody>
     <tr th:each="item : ${items}">
         <td th:text="${item.id}"></td>
         <td th:text="${item.name}"></td>
+        <td th:text="${item.description}"></td>
         <td th:text="${item.price}"></td>
         <td>
             <form th:method="post" th:action="@{'/add/' + ${item.id}}">
@@ -41,18 +44,21 @@
 
 
 <h2>My Cart</h2>
-<table>
+<table border="1">
     <thead>
     <tr>
-        <td>Id</td>
-        <td>Name</td>
-        <td>Quantity</td>
+        <td><b>Id</b></td>
+        <td><b>Name</b></td>
+        <td><b>Description</b></td>
+        <td><b>Quantity</b></td>
+        <td colspan="2"><b>Action</b></td>
     </tr>
     </thead>
     <tbody>
     <tr th:each="cartItem : ${cart.cartItems}">
         <td th:text="${cartItem.item.id}"></td>
         <td th:text="${cartItem.item.name}"></td>
+        <td th:text="${cartItem.item.description}"></td>
         <td th:text="${cartItem.quantity}"></td>
         <td>
             <form th:method="delete" th:action="@{'/delCartCount/' + ${cartItem.item.id}}">

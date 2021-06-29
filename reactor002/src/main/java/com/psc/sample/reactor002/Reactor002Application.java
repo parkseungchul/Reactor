@@ -26,14 +26,18 @@ public class Reactor002Application {
 
     @EventListener(ApplicationReadyEvent.class)
     public void doSomethingAfterStartup() {
-        Item item1 = new Item("lego"  ,"made in usa"  , 20.00);
-        Item item2 = new Item("lego"  ,"made in china", 10.00);
-        Item item3 = new Item("rc car","made in usa"  , 40.00);
-        Item item4 = new Item("rc car","made in china", 20.00);
+        Item item1 = new Item("lego", "made in usa", 20.00);
+        Item item2 = new Item("lego", "made in china", 10.00);
+        Item item3 = new Item("rc car", "made in usa", 40.00);
+        Item item4 = new Item("rc car", "made in china", 20.00);
+        Item item5 = new Item("rc car", "made in india", 15.00);
+        Item item6 = new Item("drone", "made in korea", 100.00);
         mongoOperations.save(item1);
         mongoOperations.save(item2);
         mongoOperations.save(item3);
         mongoOperations.save(item4);
+        mongoOperations.save(item5);
+        mongoOperations.save(item6);
 
     }
 
