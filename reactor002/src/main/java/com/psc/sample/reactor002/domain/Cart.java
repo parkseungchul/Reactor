@@ -1,5 +1,6 @@
 package com.psc.sample.reactor002.domain;
 
+import com.psc.sample.reactor002.domain.vo.CartItem;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 

@@ -1,5 +1,6 @@
-package com.psc.sample.reactor002.domain;
+package com.psc.sample.reactor002.domain.vo;
 
+import com.psc.sample.reactor002.domain.Item;
 import lombok.*;
 
 @Getter

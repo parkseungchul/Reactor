@@ -1,23 +1,24 @@
 package com.psc.sample.reactor002.repository;
 
 import com.psc.sample.reactor002.domain.Item;
+import com.psc.sample.reactor002.service.CartService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import reactor.test.StepVerifier;
+
 import java.util.Arrays;
 import java.util.List;
-import static org.assertj.core.api.Assertions.assertThat;
 
-@DataMongoTest
-public class RepositoryTest {
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+public class ServiceTest {
+
+    @Autowired
+    CartService cartService;
 
     @Autowired
     ItemReactiveRepository itemReactiveRepository;
-
-    @Autowired
-    CartReactiveRepository cartReactiveRepository;
 
     public Long itemCnt;
 
@@ -44,34 +45,25 @@ public class RepositoryTest {
     }
 
     @Test
-    public void itemRepositoryCount(){
+    public void itemSearchName(){
         StepVerifier.create(
-                itemReactiveRepository.findAll().count()
-        ).expectNextMatches(cnt ->{
-            assertThat(cnt).isEqualTo(itemCnt);
+                cartService.itemSearchName("drone", "made in korea", true)
+        ).expectNextMatches(item -> {
+            System.out.println(item.toString());
             return true;
         }).verifyComplete();
     }
 
+    // 널일때는 다 된다...
     @Test
-    public void itemRepositoryFindByName(){
+    public void itemSearchName2(){
         StepVerifier.create(
-                itemReactiveRepository.findByName("drone")
-        ).expectNextMatches(item ->{
-            assertThat(item.getId()).isNotNull();
-            assertThat(item.getName()).isEqualTo("drone");
-            assertThat(item.getDescription()).isEqualTo("made in korea");
-            assertThat(item.getPrice()).isEqualTo(100.00);
+                cartService.itemSearchName("rc", "china",false)
+        ).thenConsumeWhile(item -> {
+            System.out.println(item.toString());
             return true;
         }).verifyComplete();
+
     }
 
-    @Test
-    public void itemRepositoryFindByNameContaining(){
-        StepVerifier.create(
-                itemReactiveRepository.findByNameContaining("rc")
-        ).expectNextMatches(cnt ->{
-            return true;
-        }).expectNextCount(2L).verifyComplete();
-    }
 }

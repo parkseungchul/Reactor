@@ -1,7 +1,7 @@
 package com.psc.sample.reactor002.controller;
 
 import com.psc.sample.reactor002.domain.Cart;
-import com.psc.sample.reactor002.domain.CartItem;
+import com.psc.sample.reactor002.domain.vo.CartItem;
 import com.psc.sample.reactor002.repository.CartReactiveRepository;
 import com.psc.sample.reactor002.repository.ItemReactiveRepository;
 import com.psc.sample.reactor002.service.CartService;

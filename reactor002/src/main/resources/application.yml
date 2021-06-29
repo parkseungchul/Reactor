@@ -6,5 +6,6 @@ spring:
 
 logging:
   level:
-    root: DEBUG
-    org.springframework.data: TRACE
+    root: INFO
+    org.springframework.data: INFO
+    com.psc.sample: DEBUG
