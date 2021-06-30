@@ -7,6 +7,7 @@ import org.springframework.data.annotation.Id;
 @Setter
 @ToString
 @NoArgsConstructor
+@AllArgsConstructor
 public class Item {
 
     private @Id String id;

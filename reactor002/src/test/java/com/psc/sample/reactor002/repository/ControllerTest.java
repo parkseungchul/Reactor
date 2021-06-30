@@ -17,7 +17,7 @@ public class ControllerTest {
     @Autowired WebTestClient client;
 
     @Test
-    void test() {
+    void baseTest() {
         client.get().uri("/").exchange()
                 .expectStatus().isOk()
                 .expectHeader().contentType(TEXT_HTML)

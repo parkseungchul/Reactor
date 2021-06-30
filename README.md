@@ -14,3 +14,34 @@
   - Cart 장바구니 (DB)
   - CartItem 상품과 갯수 (VO)
   - RepositoryTest 만들기
+
+<pre><code>
+# 전체 조회
+curl --header "Content-Type: application/json" \
+--request GET \
+http://localhost:8080/api/items | jq
+
+# 단건 조회
+curl --header "Content-Type: application/json" \
+--request GET \
+http://localhost:8080/api/item/${id} | jq
+
+# 신규 저장
+curl --header "Content-Type: application/json" \
+--request POST \
+--data '{"name":"testName","description":"testDescription", "price":100.0}' \
+http://localhost:8080/api/item | jq
+
+업데이트 
+curl --header "Content-Type: application/json" \
+--request PUT \
+--data '{"name":"upName","description":"upDescription", "price":99.0}' \
+http://localhost:8080/api/item/60dbfe0694e8ce325727d058 | jq
+
+삭제 
+curl --header "Content-Type: application/json" \
+--request DELETE \
+http://localhost:8080/api/item/60dbff2a350d92192eb94963 | jq
+
+
+</code></pre>
