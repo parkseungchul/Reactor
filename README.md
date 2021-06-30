@@ -10,10 +10,17 @@
   - Html 테스트
   
 ### reactor002
-  - Item 상품 (DB)
-  - Cart 장바구니 (DB)
-  - CartItem 상품과 갯수 (VO)
+  - 빌드 환경 구성
+  - domain 구성 
+    - Item 상품 (DB)
+    - Cart 장바구니 (DB)
+    - CartItem 상품과 갯수 (VO)
   - RepositoryTest 만들기
+    - StepVerifier
+  - Service 만들기
+  - ServiceTest 만들기  
+  - Controller 만들기
+  - ControllerTest 만들기
 
 <pre><code>
 # 전체 조회
