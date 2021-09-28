@@ -12,7 +12,6 @@ public class FoodServer {
         return foodService.getFood().map(food -> Food.status(food));
     }
 
-
     public Flux<Food> getFoods1(){
         return this.foodService.getFoods().map(food -> Food.status(food));
     };

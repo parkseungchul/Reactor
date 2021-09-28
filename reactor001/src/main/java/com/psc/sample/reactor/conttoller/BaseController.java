@@ -1,6 +1,9 @@
 package com.psc.sample.reactor.conttoller;
 
+import com.psc.sample.reactor.service.Food;
+import com.psc.sample.reactor.service.FoodMake2;
 import lombok.AllArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +30,7 @@ public class BaseController {
      * @return
      */
     @GetMapping("/2")
-    Mono<Rendering> home() {
+    Mono<Rendering> base2() {
         return Mono.just(Rendering.view("base.html")
                 .modelAttribute("key",
                         "value")

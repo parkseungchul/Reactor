@@ -36,8 +36,6 @@ public class CartServiceImpl implements CartService{
                 .withIgnoreCase()
                 .withIgnorePaths("price"));
 
-        Example<Item> probe = Example.of(item, matcher); // <6>
-
         Example<Item> itemExample = Example.of(item, matcher);
         return itemReactiveRepository.findAll(itemExample);
     }
@@ -60,11 +58,6 @@ public class CartServiceImpl implements CartService{
                             return Mono.empty();
                         })).flatMap(cart ->  cartReactiveRepository.save(cart));
     }
-
-
-
-
-
 
     public Mono<Cart> delToCartAll(String cartId, String id) {
         return cartReactiveRepository.findById(cartId)

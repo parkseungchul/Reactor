@@ -71,9 +71,6 @@ public class BaseController {
         return cartService.delToCartAll("My Cart", id).thenReturn("redirect:/");
     }
 
-
-
-
     @DeleteMapping("/delItem/{id}")
     Mono<String> deleteItem(@PathVariable String id) {
         return this.itemReactiveRepository.deleteById(id) //

@@ -16,7 +16,7 @@
     - Cart 장바구니 (DB)
     - CartItem 상품과 갯수 (VO)
   - RepositoryTest 만들기
-    - StepVerifier
+    - StepVerifier 스탭베이파이어
   - Service 만들기
   - ServiceTest 만들기  
   - Controller 만들기
